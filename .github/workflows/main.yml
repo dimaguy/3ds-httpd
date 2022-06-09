@@ -40,7 +40,6 @@ jobs:
           make
           mkdir -p ~/artifacts
           cp 3ds-httpd.3dsx ~/artifacts
-          cp 3ds-httpd.cia ~/artifacts
       - name: Publish build to GH Actions
         uses: actions/upload-artifact@v2
         with:
