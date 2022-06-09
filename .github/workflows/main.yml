@@ -39,8 +39,8 @@ jobs:
         run: |
           make
           mkdir -p ~/artifacts
-          cp 3DSFile.3dsx ~/artifacts
-          cp 3DSFile.cia ~/artifacts
+          cp 3ds-httpd.3dsx ~/artifacts
+          cp 3ds-httpd.cia ~/artifacts
       - name: Publish build to GH Actions
         uses: actions/upload-artifact@v2
         with:
@@ -54,9 +54,9 @@ jobs:
           git config --global user.email "bot@example.com"
           git config --global user.name "A cool bot"
           git clone --depth 1 https://${{ secrets.token }}@github.com/ManiacOfGitHub/3ds-httpd.git
-          mkdir -p 3ds-httpd/builds/3DSFile/
-          cd 3ds-httpd/builds/3DSFile/
-          qrencode -o 3DSFile-release.png https://maniacofgithub.github.io/3ds-httpd/builds/3DSFile/3DSFile.cia
+          mkdir -p 3ds-httpd/builds/3ds-httpd/
+          cd 3ds-httpd/builds/3ds-httpd/
+          qrencode -o 3ds-httpd-release.png https://maniacofgithub.github.io/3ds-httpd/builds/3ds-httpd/3ds-httpd.cia
           cp ~/artifacts/* .
           git stage .
           git commit -m "Another file for the 3ds | $COMMIT_HASH"
