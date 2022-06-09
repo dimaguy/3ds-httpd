@@ -52,7 +52,7 @@ jobs:
           echo ::set-output name=current_date::$CURRENT_DATE
           git config --global user.email "bot@example.com"
           git config --global user.name "A cool bot"
-          git clone --depth 1 https://${{ secrets.token }}@github.com/ManiacOfGitHub/3ds-httpd.git
+          git clone --depth 1 https://github.com/ManiacOfGitHub/3ds-httpd.git
           mkdir -p 3ds-httpd/builds/3ds-httpd/
           cd 3ds-httpd/builds/3ds-httpd/
           qrencode -o 3ds-httpd-release.png https://maniacofgithub.github.io/3ds-httpd/builds/3ds-httpd/3ds-httpd.cia
